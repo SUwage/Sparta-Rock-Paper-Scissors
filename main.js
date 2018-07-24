@@ -3,10 +3,8 @@
 
   function compare ()
   {
-  choice1 = prompt("Do you choose rock, paper or scissors?");
-
   choice2 = Math.floor(Math.random()*(10-1+1)+1);
-  if (choice2 <3.33)
+  if (choice2 <3)
   {
     choice2 = "rock";
   }
@@ -18,10 +16,11 @@
   {
       choice2 = "scissors";
   }
-  console.log(choice2);
 
-  if ((userWin<=2)&&(computerWin<=2))
+  if (userWin < 3 && computerWin < 3)
   {
+    choice1 = prompt("Do you choose rock, paper or scissors?");
+
     if(choice1===choice2){
         alert("The result is a tie!");
         compare();
@@ -32,9 +31,8 @@
         {
             userWin +=1;
             alert("You choose rock && Computer choose scissors: You wins!!!!!");
-            console.log("You've won "+userWin+" games");
-            console.log("The computer has won "+computerWin+" games");
-            return compare();
+            alert("You've won "+userWin+" games. The computer has won "+computerWin+" games");
+            compare();
         }
     }
     if(choice1==="paper")
@@ -43,9 +41,8 @@
         {
             userWin +=1;
             alert("You choose paper && Computer choose rock: You wins!!!!!");
-            console.log("You've won "+userWin+" games");
-            console.log("The computer has won "+computerWin+" games");
-            return compare();
+            alert("You've won "+userWin+" games. The computer has won "+computerWin+" games");
+            compare();
         }
     }
     if(choice1==="scissors")
@@ -54,9 +51,8 @@
         {
             userWin +=1;
             alert("You choose scissors && Computer choose paper: You wins!!!!!");
-            console.log("You've won "+userWin+" games");
-            console.log("The computer has won "+computerWin+" games");
-            return compare();
+            alert("You've won "+userWin+" games. The computer has won "+computerWin+" games");
+            compare();
         }
     }
     if(choice1==="scissors")
@@ -65,9 +61,8 @@
         {
             computerWin +=1;
             alert("You choose scissors && Computer choose rock : You lose :(");
-            console.log("You've won "+userWin+" games");
-            console.log("The computer has won "+computerWin+" games");
-            return compare();
+            alert("You've won "+userWin+" games. The computer has won "+computerWin+" games");
+            compare();
         }
     }
     if(choice1==="rock")
@@ -76,9 +71,8 @@
         {
             computerWin +=1;
             alert("You choose rock && Computer choose paper : You lose :(");
-            console.log("You've won "+userWin+" games");
-            console.log("The computer has won "+computerWin+" games");
-            return compare();
+            alert("You've won "+userWin+" games. The computer has won "+computerWin+" games");
+            compare();
         }
     }
     if(choice1==="paper")
@@ -87,13 +81,16 @@
         {
             computerWin +=1;
             alert("You choose paper && Computer choose scissors : You lose :(");
-            console.log("You've won "+userWin+" games");
-            console.log("The computer has won "+computerWin+" games");
-            return compare();
+            alert("You've won "+userWin+" games. The computer has won "+computerWin+" games");
+            compare();
         }
     }
-  }
-  return;
-  }
 
-  compare ();
+    if (computerWin >=3) {
+      alert("COMPUTER WON! YOU LOSE");
+    } else {
+      alert("YOU WON!");
+    };
+  }
+}
+compare();
